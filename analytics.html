@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Analytics | CareScope Analytics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-chart-line"></i>
+</div>
+
+<div>
+
+<h2>CareScope</h2>
+
+<p>Analytics</p>
+
+</div>
+
+</div>
+
+<nav>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-table-columns"></i>
+
+Dashboard
+
+</a>
+
+<a href="patients.html">
+
+<i class="fa-solid fa-user-group"></i>
+
+Patients
+
+</a>
+
+<a href="appointments.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Appointments
+
+</a>
+
+<a class="active" href="analytics.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Analytics
+
+</a>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+Reports
+
+</a>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</nav>
+
+</aside>
+
+<!-- Main -->
+
+<main class="main">
+
+<header class="topbar">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+placeholder="Search Analytics">
+
+</div>
+
+<div class="top-right">
+
+<div class="circle-btn">
+
+<i class="fa-regular fa-bell"></i>
+
+</div>
+
+<div class="profile">
+
+<img src="https://i.pravatar.cc/100?img=12">
+
+<div>
+
+<h4>Dr. Smith</h4>
+
+<p>Chief Physician</p>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<span class="status">
+
+<span class="green-dot"></span>
+
+AI Healthcare Analytics
+
+</span>
+
+<h1>Analytics Dashboard</h1>
+
+<p>
+
+Monitor hospital performance, disease trends,
+AI predictions and recovery insights in real time.
+
+</p>
+
+</div>
+
+<div class="hero-right">
+
+<button>
+
+<i class="fa-solid fa-chart-simple"></i>
+
+Generate Insight
+
+</button>
+
+</div>
+
+</section>
+
+<!-- KPI -->
+
+<section class="cards">
+
+<div class="card">
+
+<div class="icon blue">
+
+<i class="fa-solid fa-hospital-user"></i>
+
+</div>
+
+<h2>4,982</h2>
+
+<p>Total Patients</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon green">
+
+<i class="fa-solid fa-heart-circle-check"></i>
+
+</div>
+
+<h2>96%</h2>
+
+<p>Recovery Rate</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon orange">
+
+<i class="fa-solid fa-brain"></i>
+
+</div>
+
+<h2>89%</h2>
+
+<p>AI Prediction Accuracy</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon red">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+</div>
+
+<h2>17</h2>
+
+<p>Critical Cases</p>
+
+</div>
+
+</section>
+
+<!-- AI Prediction -->
+
+<section class="chart-card">
+
+<div class="card-header">
+
+<div>
+
+<h3>AI Health Prediction</h3>
+
+<p>Next 30 Days Forecast</p>
+
+</div>
+
+</div>
+
+<canvas id="predictionChart"></canvas>
+
+</section>
+
+<!-- ================= ANALYTICS CHARTS ================= -->
+
+<section class="analytics-grid">
+
+    <!-- Disease Trend -->
+
+    <div class="chart-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>Disease Trend</h3>
+
+                <p>Monthly disease analysis</p>
+
+            </div>
+
+        </div>
+
+        <canvas id="diseaseTrendChart"></canvas>
+
+    </div>
+
+    <!-- Recovery Analytics -->
+
+    <div class="chart-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>Recovery Analytics</h3>
+
+                <p>Weekly patient recovery</p>
+
+            </div>
+
+        </div>
+
+        <canvas id="analyticsRecoveryChart"></canvas>
+
+    </div>
+
+    <!-- Department Performance -->
+
+    <div class="chart-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>Department Performance</h3>
+
+                <p>Overall hospital efficiency</p>
+
+            </div>
+
+        </div>
+
+        <canvas id="analyticsDepartmentChart"></canvas>
+
+    </div>
+
+</section>
+
+<!-- ================= AI INSIGHTS ================= -->
+
+<section class="insights">
+
+    <div class="insight-card">
+
+        <h3>AI Risk Detection</h3>
+
+        <h1>91%</h1>
+
+        <div class="progress">
+
+            <div class="progress-bar red" style="width:91%"></div>
+
+        </div>
+
+        <p>High-risk patients identified accurately.</p>
+
+    </div>
+
+    <div class="insight-card">
+
+        <h3>Bed Occupancy</h3>
+
+        <h1>78%</h1>
+
+        <div class="progress">
+
+            <div class="progress-bar" style="width:78%"></div>
+
+        </div>
+
+        <p>Current hospital bed utilization.</p>
+
+    </div>
+
+    <div class="insight-card">
+
+        <h3>Treatment Success</h3>
+
+        <h1>94%</h1>
+
+        <div class="progress">
+
+            <div class="progress-bar green" style="width:94%"></div>
+
+        </div>
+
+        <p>Successful treatment completion rate.</p>
+
+    </div>
+
+</section>
+
+<!-- ================= HOSPITAL UTILIZATION ================= -->
+
+<section class="chart-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h3>Hospital Utilization</h3>
+
+            <p>Patient load across departments</p>
+
+        </div>
+
+    </div>
+
+    <canvas id="hospitalUtilizationChart"></canvas>
+
+</section>
+
+<!-- ================= AI RECOMMENDATIONS ================= -->
+
+<section class="chart-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h3>AI Recommendations</h3>
+
+            <p>Smart insights generated by CareScope AI</p>
+
+        </div>
+
+    </div>
+
+    <div class="activity-list">
+
+        <div class="activity-item">
+
+            <div class="activity-dot green"></div>
+
+            <div>
+
+                <h4>Increase ICU Capacity</h4>
+
+                <p>AI predicts a 12% increase in ICU admissions next week.</p>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <div class="activity-dot blue"></div>
+
+            <div>
+
+                <h4>Optimize Appointment Slots</h4>
+
+                <p>Morning appointments have the highest patient demand.</p>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <div class="activity-dot orange"></div>
+
+            <div>
+
+                <h4>Reduce Waiting Time</h4>
+
+                <p>Neurology department needs additional consultation hours.</p>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <div class="activity-dot red"></div>
+
+            <div>
+
+                <h4>Monitor High-Risk Patients</h4>
+
+                <p>17 patients require continuous observation based on AI analysis.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= EXECUTIVE SUMMARY ================= -->
+
+<section class="analytics-grid">
+
+    <div class="chart-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>Executive Summary</h3>
+
+                <p>Hospital Performance Overview</p>
+
+            </div>
+
+        </div>
+
+        <table class="patient-table">
+
+            <tbody>
+
+                <tr>
+                    <td>Total Patients</td>
+                    <td>4,982</td>
+                </tr>
+
+                <tr>
+                    <td>Appointments Today</td>
+                    <td>186</td>
+                </tr>
+
+                <tr>
+                    <td>Recovery Rate</td>
+                    <td><span class="badge green">96%</span></td>
+                </tr>
+
+                <tr>
+                    <td>AI Prediction Accuracy</td>
+                    <td><span class="badge blue">89%</span></td>
+                </tr>
+
+                <tr>
+                    <td>Critical Cases</td>
+                    <td><span class="badge red">17</span></td>
+                </tr>
+
+                <tr>
+                    <td>Hospital Efficiency</td>
+                    <td><span class="badge green">94%</span></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="chart-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>Top Departments</h3>
+
+                <p>Monthly Performance Score</p>
+
+            </div>
+
+        </div>
+
+        <div class="progress-item">
+
+            <span>Cardiology</span>
+
+            <div class="progress">
+
+                <div class="progress-bar" style="width:96%"></div>
+
+            </div>
+
+        </div>
+
+        <div class="progress-item">
+
+            <span>Neurology</span>
+
+            <div class="progress">
+
+                <div class="progress-bar green" style="width:92%"></div>
+
+            </div>
+
+        </div>
+
+        <div class="progress-item">
+
+            <span>Pediatrics</span>
+
+            <div class="progress">
+
+                <div class="progress-bar orange" style="width:88%"></div>
+
+            </div>
+
+        </div>
+
+        <div class="progress-item">
+
+            <span>Orthopedics</span>
+
+            <div class="progress">
+
+                <div class="progress-bar red" style="width:84%"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= AI FORECAST ================= -->
+
+<section class="insights">
+
+    <div class="insight-card">
+
+        <h3>Next Week Admissions</h3>
+
+        <h1>+14%</h1>
+
+        <div class="progress">
+
+            <div class="progress-bar" style="width:86%"></div>
+
+        </div>
+
+        <p>Expected increase in hospital admissions.</p>
+
+    </div>
+
+    <div class="insight-card">
+
+        <h3>Staff Utilization</h3>
+
+        <h1>82%</h1>
+
+        <div class="progress">
+
+            <div class="progress-bar green" style="width:82%"></div>
+
+        </div>
+
+        <p>Medical staff utilization remains balanced.</p>
+
+    </div>
+
+    <div class="insight-card">
+
+        <h3>Emergency Readiness</h3>
+
+        <h1>97%</h1>
+
+        <div class="progress">
+
+            <div class="progress-bar red" style="width:97%"></div>
+
+        </div>
+
+        <p>Hospital emergency response is fully operational.</p>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 CareScope Analytics • AI Analytics Dashboard
+
+    </p>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

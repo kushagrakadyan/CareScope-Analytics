@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Patients | CareScope Analytics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-heart-pulse"></i>
+</div>
+
+<div>
+<h2>CareScope</h2>
+<p>Analytics</p>
+</div>
+
+</div>
+
+<nav>
+
+<a href="dashboard.html">
+<i class="fa-solid fa-table-columns"></i>
+Dashboard
+</a>
+
+<a class="active" href="patients.html">
+<i class="fa-solid fa-user-group"></i>
+Patients
+</a>
+
+<a href="appointments.html">
+<i class="fa-solid fa-calendar-days"></i>
+Appointments
+</a>
+
+<a href="analytics.html">
+<i class="fa-solid fa-chart-line"></i>
+Analytics
+</a>
+
+<a href="reports.html">
+<i class="fa-solid fa-file-lines"></i>
+Reports
+</a>
+
+<a href="settings.html">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+</nav>
+
+</aside>
+
+<!-- MAIN -->
+
+<main class="main">
+
+<header class="topbar">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+placeholder="Search Patient">
+
+</div>
+
+<div class="top-right">
+
+<div class="circle-btn">
+
+<i class="fa-regular fa-bell"></i>
+
+</div>
+
+<div class="profile">
+
+<img src="https://i.pravatar.cc/100?img=12">
+
+<div>
+
+<h4>Dr. Smith</h4>
+
+<p>Chief Physician</p>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<span class="status">
+
+<span class="green-dot"></span>
+
+Patient Records
+
+</span>
+
+<h1>Patients</h1>
+
+<p>
+
+Manage every patient's medical history, appointments,
+diagnosis, treatment and reports from one dashboard.
+
+</p>
+
+</div>
+
+<div class="hero-right">
+
+<button>
+
+<i class="fa-solid fa-user-plus"></i>
+
+Add Patient
+
+</button>
+
+</div>
+
+</section>
+
+<!-- KPI -->
+
+<section class="cards">
+
+<div class="card">
+
+<div class="icon blue">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<h2>4,982</h2>
+
+<p>Total Patients</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon green">
+
+<i class="fa-solid fa-bed"></i>
+
+</div>
+
+<h2>212</h2>
+
+<p>Admitted</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon orange">
+
+<i class="fa-solid fa-user-check"></i>
+
+</div>
+
+<h2>96%</h2>
+
+<p>Recovery Rate</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon red">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+</div>
+
+<h2>17</h2>
+
+<p>Critical Cases</p>
+
+</div>
+
+</section>
+
+<!-- ================= FILTER BAR ================= -->
+
+<section class="chart-card">
+
+    <div class="card-header">
+
+        <div>
+            <h3>Patient Directory</h3>
+            <p>Search and manage all registered patients</p>
+        </div>
+
+        <button class="btn-light">
+            <i class="fa-solid fa-filter"></i>
+            Filter
+        </button>
+
+    </div>
+
+    <div class="appointment-form">
+
+        <input type="text" placeholder="Search by Patient Name">
+
+        <select>
+            <option>All Departments</option>
+            <option>Cardiology</option>
+            <option>Neurology</option>
+            <option>Orthopedics</option>
+            <option>Pediatrics</option>
+        </select>
+
+    </div>
+
+</section>
+
+<!-- ================= PATIENT TABLE ================= -->
+
+<section class="chart-card">
+
+<div class="card-header">
+
+<div>
+
+<h3>Patients List</h3>
+
+<p>4982 Registered Patients</p>
+
+</div>
+
+<button class="btn-light">
+
+<i class="fa-solid fa-download"></i>
+
+Export
+
+</button>
+
+</div>
+
+<table class="patient-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Patient</th>
+
+<th>Age</th>
+
+<th>Gender</th>
+
+<th>Department</th>
+
+<th>Doctor</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>#1001</td>
+
+<td>John Smith</td>
+
+<td>45</td>
+
+<td>Male</td>
+
+<td>Cardiology</td>
+
+<td>Dr. Emma</td>
+
+<td><span class="badge green">Healthy</span></td>
+
+<td><button class="table-btn">View</button></td>
+
+</tr>
+
+<tr>
+
+<td>#1002</td>
+
+<td>Sophia Johnson</td>
+
+<td>31</td>
+
+<td>Female</td>
+
+<td>Neurology</td>
+
+<td>Dr. Alex</td>
+
+<td><span class="badge blue">Recovering</span></td>
+
+<td><button class="table-btn">View</button></td>
+
+</tr>
+
+<tr>
+
+<td>#1003</td>
+
+<td>Michael Brown</td>
+
+<td>56</td>
+
+<td>Male</td>
+
+<td>Orthopedics</td>
+
+<td>Dr. Liam</td>
+
+<td><span class="badge orange">Observation</span></td>
+
+<td><button class="table-btn">View</button></td>
+
+</tr>
+
+<tr>
+
+<td>#1004</td>
+
+<td>Emily Davis</td>
+
+<td>24</td>
+
+<td>Female</td>
+
+<td>Pediatrics</td>
+
+<td>Dr. Olivia</td>
+
+<td><span class="badge red">Critical</span></td>
+
+<td><button class="table-btn">View</button></td>
+
+</tr>
+
+<tr>
+
+<td>#1005</td>
+
+<td>Daniel Wilson</td>
+
+<td>38</td>
+
+<td>Male</td>
+
+<td>Cardiology</td>
+
+<td>Dr. Emma</td>
+
+<td><span class="badge green">Healthy</span></td>
+
+<td><button class="table-btn">View</button></td>
+
+</tr>
+
+<tr>
+
+<td>#1006</td>
+
+<td>Sarah Lee</td>
+
+<td>42</td>
+
+<td>Female</td>
+
+<td>Neurology</td>
+
+<td>Dr. Alex</td>
+
+<td><span class="badge blue">Recovering</span></td>
+
+<td><button class="table-btn">View</button></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ================= PATIENT ANALYTICS ================= -->
+
+<section class="analytics-grid">
+
+    <!-- Age Distribution -->
+
+    <div class="chart-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>Age Distribution</h3>
+
+                <p>Patients by Age Group</p>
+
+            </div>
+
+        </div>
+
+        <canvas id="ageChart"></canvas>
+
+    </div>
+
+    <!-- Gender Distribution -->
+
+    <div class="chart-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>Gender Distribution</h3>
+
+                <p>Current Patient Ratio</p>
+
+            </div>
+
+        </div>
+
+        <canvas id="genderChart"></canvas>
+
+    </div>
+
+    <!-- Recovery Overview -->
+
+    <div class="chart-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>Recovery Overview</h3>
+
+                <p>Monthly Progress</p>
+
+            </div>
+
+        </div>
+
+        <canvas id="patientRecoveryChart"></canvas>
+
+    </div>
+
+</section>
+
+<!-- ================= RECENT ACTIVITY ================= -->
+
+<section class="chart-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h3>Recent Patient Activity</h3>
+
+            <p>Latest updates from hospital</p>
+
+        </div>
+
+    </div>
+
+    <div class="activity-list">
+
+        <div class="activity-item">
+
+            <div class="activity-dot green"></div>
+
+            <div>
+
+                <h4>New Patient Registered</h4>
+
+                <p>John Smith successfully admitted • 10 min ago</p>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <div class="activity-dot blue"></div>
+
+            <div>
+
+                <h4>Medical Report Uploaded</h4>
+
+                <p>Emily Davis laboratory report generated</p>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <div class="activity-dot orange"></div>
+
+            <div>
+
+                <h4>Patient Discharged</h4>
+
+                <p>Michael Brown discharged after recovery</p>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <div class="activity-dot red"></div>
+
+            <div>
+
+                <h4>Critical Alert</h4>
+
+                <p>Sarah Lee moved to ICU for observation</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= QUICK SUMMARY ================= -->
+
+<section class="insights">
+
+    <div class="insight-card">
+
+        <h3>Total Registered</h3>
+
+        <h1>4,982</h1>
+
+        <div class="progress">
+
+            <div class="progress-bar" style="width:90%;"></div>
+
+        </div>
+
+        <p>12% increase compared to last month.</p>
+
+    </div>
+
+    <div class="insight-card">
+
+        <h3>Recovery Success</h3>
+
+        <h1>96%</h1>
+
+        <div class="progress">
+
+            <div class="progress-bar green" style="width:96%;"></div>
+
+        </div>
+
+        <p>Recovery rate remains excellent.</p>
+
+    </div>
+
+    <div class="insight-card">
+
+        <h3>Critical Patients</h3>
+
+        <h1>17</h1>
+
+        <div class="progress">
+
+            <div class="progress-bar red" style="width:18%;"></div>
+
+        </div>
+
+        <p>Critical cases are under continuous monitoring.</p>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 CareScope Analytics • Patient Management System
+
+    </p>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

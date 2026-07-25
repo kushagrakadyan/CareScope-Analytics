@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareScope Analytics Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!---------------- SIDEBAR ------------------>
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-stethoscope"></i>
+        </div>
+
+        <div>
+            <h2>CareScope</h2>
+            <p>Analytics</p>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a class="active" href="dashboard.html">
+            <i class="fa-solid fa-table-columns"></i>
+            Dashboard
+        </a>
+
+        <a href="patients.html">
+            <i class="fa-solid fa-user-group"></i>
+            Patients
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            Medical History
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-wave-square"></i>
+            Treatment Timeline
+        </a>
+
+        <a href="appointments.html">
+            <i class="fa-solid fa-calendar-days"></i>
+            Appointments
+        </a>
+
+        <a href="analytics.html">
+            <i class="fa-solid fa-chart-line"></i>
+            Predictive Analytics
+        </a>
+
+        <a href="reports.html">
+            <i class="fa-solid fa-file-lines"></i>
+            Reports
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-heart-pulse"></i>
+            Live Monitoring
+        </a>
+
+        <a href="settings.html">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+        </a>
+
+    </nav>
+
+    <div class="pro-card">
+
+        <h3>Pro Insights</h3>
+
+        <p>
+            Unlock predictive AI across all departments.
+        </p>
+
+        <button>
+            Upgrade Plan
+        </button>
+
+    </div>
+
+</aside>
+
+<!---------------- MAIN ------------------>
+
+<main class="main">
+
+<!---------------- TOPBAR ------------------>
+
+<header class="topbar">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+placeholder="Search patients, reports, departments..."
+>
+
+</div>
+
+<div class="top-right">
+
+<div class="hospital">
+
+<span class="dot"></span>
+
+St. Meridian General
+
+<i class="fa-solid fa-angle-down"></i>
+
+</div>
+
+<div class="circle-btn">
+
+<i class="fa-regular fa-moon"></i>
+
+</div>
+
+<div class="circle-btn">
+
+<i class="fa-regular fa-bell"></i>
+
+</div>
+
+<div class="profile">
+
+<img src="https://i.pravatar.cc/100?img=12">
+
+<div>
+
+<h4>Dr. Smith</h4>
+
+<p>Chief Physician</p>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!---------------- HERO ------------------>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<span class="status">
+
+<span class="green-dot"></span>
+
+System Healthy • Saturday, Jul 25
+
+</span>
+
+<h1>
+
+Good Morning,<br>
+
+Dr. Smith
+
+</h1>
+
+<p>
+
+Your hospital admitted
+<strong>710 new patients</strong>
+
+this month with a
+
+<strong>93% recovery rate.</strong>
+
+ICU load is stable and
+
+3 reports are awaiting review.
+
+</p>
+
+</div>
+
+<div class="hero-right">
+
+<button>
+
+<i class="fa-solid fa-user-plus"></i>
+
+Add Patient
+
+</button>
+
+<button>
+
+<i class="fa-solid fa-calendar-plus"></i>
+
+Schedule
+
+</button>
+
+<button>
+
+<i class="fa-solid fa-file-medical"></i>
+
+Generate Report
+
+</button>
+
+</div>
+
+</section>
+
+<!---------------- KPI CARDS ------------------>
+
+<section class="cards">
+
+<div class="card">
+
+<div class="icon blue">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<span class="growth positive">
+
+↑ 8.2%
+
+</span>
+
+<h2>4,982</h2>
+
+<p>Total Patients</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon green">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</div>
+
+<span class="growth positive">
+
+↑ 4.1%
+
+</span>
+
+<h2>128</h2>
+
+<p>Today's Appointments</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon red">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+</div>
+
+<span class="growth negative">
+
+↓ 2.3%
+
+</span>
+
+<h2>74%</h2>
+
+<p>ICU Occupancy</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon emerald">
+
+<i class="fa-solid fa-bed"></i>
+
+</div>
+
+<span class="growth positive">
+
+↑ 3.6%
+
+</span>
+
+<h2>212</h2>
+
+<p>Available Beds</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon purple">
+
+<i class="fa-solid fa-chart-line"></i>
+
+</div>
+
+<span class="growth positive">
+
+↑ 5.4%</span>
+
+<h2>93%</h2>
+
+<p>Recovery Rate</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon orange">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+</div>
+
+<span class="growth negative">
+
+↓ 1.2%
+
+</span>
+
+<h2>17</h2>
+
+<p>Emergency Cases</p>
+
+</div>
+
+</section>
+
+<!-- NEXT PART -->
+ 
+<!---------------- ANALYTICS GRID ------------------>
+
+<section class="analytics-grid">
+
+    <!------------ Patient Growth ------------>
+
+    <div class="chart-card">
+
+        <div class="chart-header">
+
+            <div>
+                <h3>Patient Growth</h3>
+                <p>Admissions during the last 12 months</p>
+            </div>
+
+            <button class="filter-btn">
+                Monthly
+            </button>
+
+        </div>
+
+        <canvas id="patientChart"></canvas>
+
+    </div>
+
+    <!------------ Hospital Insights ------------>
+
+    <div class="insight-card">
+
+        <h3>Hospital Performance</h3>
+
+        <div class="progress-item">
+
+            <div class="progress-title">
+
+                <span>Recovery Rate</span>
+
+                <strong>93%</strong>
+
+            </div>
+
+            <div class="progress blue">
+                <span></span>
+            </div>
+
+        </div>
+
+        <div class="progress-item">
+
+            <div class="progress-title">
+
+                <span>ICU Capacity</span>
+
+                <strong>74%</strong>
+
+            </div>
+
+            <div class="progress red">
+                <span></span>
+            </div>
+
+        </div>
+
+        <div class="progress-item">
+
+            <div class="progress-title">
+
+                <span>Appointments</span>
+
+                <strong>84%</strong>
+
+            </div>
+
+            <div class="progress green">
+                <span></span>
+            </div>
+
+        </div>
+
+        <div class="progress-item">
+
+            <div class="progress-title">
+
+                <span>Emergency Response</span>
+
+                <strong>71%</strong>
+
+            </div>
+
+            <div class="progress orange">
+                <span></span>
+            </div>
+
+        </div>
+
+        <div class="mini-stats">
+
+            <div class="mini-card">
+
+                <h2>97%</h2>
+
+                <p>Patient Satisfaction</p>
+
+            </div>
+
+            <div class="mini-card">
+
+                <h2>18 min</h2>
+
+                <p>Average Waiting</p>
+
+            </div>
+
+            <div class="mini-card">
+
+                <h2>212</h2>
+
+                <p>Available Beds</p>
+
+            </div>
+
+            <div class="mini-card">
+
+                <h2>43</h2>
+
+                <p>Doctors Online</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!---------------- SECOND ANALYTICS ------------------>
+
+<section class="analytics-grid">
+
+    <!------------ Disease Distribution ------------>
+
+    <div class="chart-card">
+
+        <div class="chart-header">
+
+            <div>
+
+                <h3>Disease Distribution</h3>
+
+                <p>Current patient categories</p>
+
+            </div>
+
+        </div>
+
+        <canvas id="diseaseChart"></canvas>
+
+    </div>
+
+    <!------------ Recovery Trends ------------>
+
+    <div class="chart-card">
+
+        <div class="chart-header">
+
+            <div>
+
+                <h3>Recovery Trends</h3>
+
+                <p>Weekly hospital performance</p>
+
+            </div>
+
+        </div>
+
+        <canvas id="recoveryChart"></canvas>
+
+    </div>
+
+</section>
+
+<!-- NEXT PART -->
+<!---------------- TABLE SECTION ------------------>
+
+<section class="table-section">
+
+    <!---------------- RECENT PATIENTS ------------------>
+
+    <div class="table-card">
+
+        <div class="table-header">
+
+            <h3>Recent Patients</h3>
+
+            <button>View All</button>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Patient</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                    <th>Doctor</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+
+                        <div class="patient">
+
+                            <img src="https://i.pravatar.cc/60?img=5">
+
+                            <div>
+
+                                <h4>Emma Watson</h4>
+
+                                <p>ID : PT-2034</p>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>Cardiology</td>
+
+                    <td>
+
+                        <span class="status-badge completed">
+
+                            Stable
+
+                        </span>
+
+                    </td>
+
+                    <td>Dr. Smith</td>
+
+                    <td>
+
+                        <div class="action-btn">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <div class="patient">
+
+                            <img src="https://i.pravatar.cc/60?img=9">
+
+                            <div>
+
+                                <h4>Daniel Cooper</h4>
+
+                                <p>ID : PT-2035</p>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>Neurology</td>
+
+                    <td>
+
+                        <span class="status-badge pending">
+
+                            Observation
+
+                        </span>
+
+                    </td>
+
+                    <td>Dr. Wilson</td>
+
+                    <td>
+
+                        <div class="action-btn">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <div class="patient">
+
+                            <img src="https://i.pravatar.cc/60?img=15">
+
+                            <div>
+
+                                <h4>James Miller</h4>
+
+                                <p>ID : PT-2036</p>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>ICU</td>
+
+                    <td>
+
+                        <span class="status-badge critical">
+
+                            Critical
+
+                        </span>
+
+                    </td>
+
+                    <td>Dr. Adams</td>
+
+                    <td>
+
+                        <div class="action-btn">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <div class="patient">
+
+                            <img src="https://i.pravatar.cc/60?img=20">
+
+                            <div>
+
+                                <h4>Sophia Brown</h4>
+
+                                <p>ID : PT-2037</p>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>Orthopedics</td>
+
+                    <td>
+
+                        <span class="status-badge processing">
+
+                            Recovering
+
+                        </span>
+
+                    </td>
+
+                    <td>Dr. Thomas</td>
+
+                    <td>
+
+                        <div class="action-btn">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!---------------- ACTIVITY ------------------>
+
+    <div class="activity">
+
+        <h3>Today's Activity</h3>
+
+        <div class="timeline">
+
+            <div class="event">
+
+                <h4>New Patient Admitted</h4>
+
+                <p>
+
+                    Emma Watson admitted to Cardiology Ward.
+
+                </p>
+
+                <span>09:15 AM</span>
+
+            </div>
+
+            <div class="event">
+
+                <h4>Report Generated</h4>
+
+                <p>
+
+                    MRI report completed successfully.
+
+                </p>
+
+                <span>10:40 AM</span>
+
+            </div>
+
+            <div class="event">
+
+                <h4>Emergency Alert</h4>
+
+                <p>
+
+                    ICU received one emergency patient.
+
+                </p>
+
+                <span>12:20 PM</span>
+
+            </div>
+
+            <div class="event">
+
+                <h4>Appointment Completed</h4>
+
+                <p>
+
+                    Dr. Smith completed today's consultation.
+
+                </p>
+
+                <span>02:45 PM</span>
+
+            </div>
+
+        </div>
+
+        <div class="quick-stats">
+
+            <div class="quick-card">
+
+                <h2>128</h2>
+
+                <p>Appointments</p>
+
+            </div>
+
+            <div class="quick-card">
+
+                <h2>43</h2>
+
+                <p>Doctors</p>
+
+            </div>
+
+            <div class="quick-card">
+
+                <h2>212</h2>
+
+                <p>Beds Free</p>
+
+            </div>
+
+            <div class="quick-card">
+
+                <h2>96%</h2>
+
+                <p>Satisfaction</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    © 2026 CareScope Analytics • AI Powered Hospital Dashboard
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="js/charts.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

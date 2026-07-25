@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments | CareScope Analytics</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+    <div class="logo-icon">
+        <i class="fa-solid fa-stethoscope"></i>
+    </div>
+
+    <div>
+        <h2>CareScope</h2>
+        <p>Analytics</p>
+    </div>
+</div>
+
+<nav>
+
+<a href="dashboard.html">
+<i class="fa-solid fa-table-columns"></i>
+Dashboard
+</a>
+
+<a href="patients.html">
+<i class="fa-solid fa-user-group"></i>
+Patients
+</a>
+
+<a href="#">
+<i class="fa-solid fa-clock-rotate-left"></i>
+Medical History
+</a>
+
+<a href="#">
+<i class="fa-solid fa-wave-square"></i>
+Treatment Timeline
+</a>
+
+<a class="active" href="appointments.html">
+<i class="fa-solid fa-calendar-days"></i>
+Appointments
+</a>
+
+<a href="analytics.html">
+<i class="fa-solid fa-chart-line"></i>
+Predictive Analytics
+</a>
+
+<a href="reports.html">
+<i class="fa-solid fa-file-lines"></i>
+Reports
+</a>
+
+<a href="#">
+<i class="fa-solid fa-heart-pulse"></i>
+Monitoring
+</a>
+
+<a href="settings.html">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+</nav>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+<header class="topbar">
+
+<div class="search-box">
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+placeholder="Search appointments..."
+>
+
+</div>
+
+<div class="top-right">
+
+<div class="circle-btn">
+<i class="fa-regular fa-bell"></i>
+</div>
+
+<div class="profile">
+
+<img src="https://i.pravatar.cc/100?img=12">
+
+<div>
+<h4>Dr. Smith</h4>
+<p>Chief Physician</p>
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= PAGE TITLE ================= -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<span class="status">
+<span class="green-dot"></span>
+Today's Schedule
+</span>
+
+<h1>Appointments</h1>
+
+<p>
+Manage doctor schedules, upcoming consultations,
+follow-ups and patient bookings.
+</p>
+
+</div>
+
+<div class="hero-right">
+
+<button>
+<i class="fa-solid fa-calendar-plus"></i>
+New Appointment
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="cards">
+
+<div class="card">
+<div class="icon blue">
+<i class="fa-solid fa-calendar-check"></i>
+</div>
+
+<h2>128</h2>
+
+<p>Today's Appointments</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon green">
+<i class="fa-solid fa-user-doctor"></i>
+</div>
+
+<h2>46</h2>
+
+<p>Doctors Available</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon orange">
+<i class="fa-solid fa-clock"></i>
+</div>
+
+<h2>32</h2>
+
+<p>Pending Checkups</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon red">
+<i class="fa-solid fa-triangle-exclamation"></i>
+</div>
+
+<h2>5</h2>
+
+<p>Emergency Visits</p>
+
+</div>
+
+</section>
+
+<!-- ================= UPCOMING APPOINTMENTS ================= -->
+
+<section class="chart-card">
+
+<div class="card-header">
+
+<div>
+<h3>Upcoming Appointments</h3>
+<p>Today's consultation schedule</p>
+</div>
+
+<button class="btn-light">
+View All
+</button>
+
+</div>
+
+<table class="patient-table">
+
+<thead>
+
+<tr>
+
+<th>Patient</th>
+
+<th>Doctor</th>
+
+<th>Department</th>
+
+<th>Time</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>John Smith</td>
+
+<td>Dr. Emma</td>
+
+<td>Cardiology</td>
+
+<td>09:30 AM</td>
+
+<td><span class="badge green">Confirmed</span></td>
+
+<td><button class="table-btn">View</button></td>
+
+</tr>
+
+<tr>
+
+<td>Sophia Johnson</td>
+
+<td>Dr. Alex</td>
+
+<td>Neurology</td>
+
+<td>10:15 AM</td>
+
+<td><span class="badge blue">Waiting</span></td>
+
+<td><button class="table-btn">View</button></td>
+
+</tr>
+
+<tr>
+
+<td>Michael Brown</td>
+
+<td>Dr. Olivia</td>
+
+<td>Orthopedics</td>
+
+<td>11:45 AM</td>
+
+<td><span class="badge orange">In Progress</span></td>
+
+<td><button class="table-btn">View</button></td>
+
+</tr>
+
+<tr>
+
+<td>Emily Davis</td>
+
+<td>Dr. Liam</td>
+
+<td>Pediatrics</td>
+
+<td>01:00 PM</td>
+
+<td><span class="badge red">Cancelled</span></td>
+
+<td><button class="table-btn">View</button></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ================= CALENDAR + RIGHT PANEL ================= -->
+
+<section class="appointment-layout">
+
+    <!-- Calendar -->
+
+    <div class="chart-card calendar-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>Appointment Calendar</h3>
+
+                <p>July 2026</p>
+
+            </div>
+
+            <button class="btn-light">
+                Today
+            </button>
+
+        </div>
+
+        <div class="calendar">
+
+            <div class="day-name">Sun</div>
+            <div class="day-name">Mon</div>
+            <div class="day-name">Tue</div>
+            <div class="day-name">Wed</div>
+            <div class="day-name">Thu</div>
+            <div class="day-name">Fri</div>
+            <div class="day-name">Sat</div>
+
+            <div class="day"></div>
+            <div class="day"></div>
+
+            <div class="day">1</div>
+            <div class="day">2</div>
+            <div class="day active">3</div>
+            <div class="day">4</div>
+            <div class="day">5</div>
+
+            <div class="day">6</div>
+            <div class="day">7</div>
+            <div class="day">8</div>
+            <div class="day">9</div>
+            <div class="day">10</div>
+            <div class="day">11</div>
+            <div class="day">12</div>
+
+            <div class="day">13</div>
+            <div class="day">14</div>
+            <div class="day">15</div>
+            <div class="day">16</div>
+            <div class="day">17</div>
+            <div class="day">18</div>
+            <div class="day">19</div>
+
+            <div class="day">20</div>
+            <div class="day">21</div>
+            <div class="day">22</div>
+            <div class="day">23</div>
+            <div class="day">24</div>
+            <div class="day">25</div>
+            <div class="day">26</div>
+
+            <div class="day">27</div>
+            <div class="day">28</div>
+            <div class="day">29</div>
+            <div class="day">30</div>
+            <div class="day">31</div>
+
+        </div>
+
+    </div>
+
+    <!-- Right Panel -->
+
+    <div class="schedule-panel">
+
+        <div class="chart-card">
+
+            <h3>Today's Schedule</h3>
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+                    09:30
+                </div>
+
+                <div>
+
+                    <h4>John Smith</h4>
+
+                    <p>Cardiology Consultation</p>
+
+                </div>
+
+            </div>
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+                    11:00
+                </div>
+
+                <div>
+
+                    <h4>Sophia Johnson</h4>
+
+                    <p>Neurology Follow-up</p>
+
+                </div>
+
+            </div>
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+                    01:30
+                </div>
+
+                <div>
+
+                    <h4>Michael Brown</h4>
+
+                    <p>Orthopedic Review</p>
+
+                </div>
+
+            </div>
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+                    04:00
+                </div>
+
+                <div>
+
+                    <h4>Emily Davis</h4>
+
+                    <p>Pediatric Consultation</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= NEW APPOINTMENT ================= -->
+
+<section class="chart-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h3>Schedule New Appointment</h3>
+
+            <p>Create a patient booking</p>
+
+        </div>
+
+    </div>
+
+    <form class="appointment-form">
+
+        <input
+            type="text"
+            placeholder="Patient Name"
+        >
+
+        <input
+            type="text"
+            placeholder="Doctor Name"
+        >
+
+        <select>
+
+            <option>Cardiology</option>
+
+            <option>Neurology</option>
+
+            <option>Orthopedics</option>
+
+            <option>Pediatrics</option>
+
+        </select>
+
+        <input type="date">
+
+        <input type="time">
+
+        <button type="submit">
+
+            <i class="fa-solid fa-calendar-plus"></i>
+
+            Schedule Appointment
+
+        </button>
+
+    </form>
+
+</section>
+<!-- ================= APPOINTMENT STATISTICS ================= -->
+
+<section class="analytics-grid">
+
+    <div class="chart-card">
+
+        <div class="card-header">
+            <div>
+                <h3>Weekly Appointments</h3>
+                <p>Appointments this week</p>
+            </div>
+        </div>
+
+        <canvas id="weeklyAppointmentsChart"></canvas>
+
+    </div>
+
+    <div class="chart-card">
+
+        <div class="card-header">
+            <div>
+                <h3>Department Distribution</h3>
+                <p>Appointments by department</p>
+            </div>
+        </div>
+
+        <canvas id="departmentChart"></canvas>
+
+    </div>
+
+</section>
+
+<!-- ================= RECENT ACTIVITY ================= -->
+
+<section class="chart-card">
+
+    <div class="card-header">
+
+        <div>
+            <h3>Recent Activity</h3>
+            <p>Latest appointment updates</p>
+        </div>
+
+    </div>
+
+    <div class="activity-list">
+
+        <div class="activity-item">
+
+            <div class="activity-dot green"></div>
+
+            <div>
+
+                <h4>Appointment Confirmed</h4>
+
+                <p>John Smith with Dr. Emma • 5 min ago</p>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <div class="activity-dot blue"></div>
+
+            <div>
+
+                <h4>New Booking</h4>
+
+                <p>Emily Davis booked Pediatrics • 18 min ago</p>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <div class="activity-dot orange"></div>
+
+            <div>
+
+                <h4>Appointment Rescheduled</h4>
+
+                <p>Michael Brown moved to 3:00 PM</p>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <div class="activity-dot red"></div>
+
+            <div>
+
+                <h4>Appointment Cancelled</h4>
+
+                <p>Sarah Wilson cancelled today's visit</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="dashboard-footer">
+
+    <p>
+        © 2026 CareScope Analytics. All Rights Reserved.
+    </p>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

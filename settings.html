@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Settings | CareScope Analytics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-heart-pulse"></i>
+</div>
+
+<div>
+<h2>CareScope</h2>
+<p>Analytics</p>
+</div>
+
+</div>
+
+<nav>
+
+<a href="dashboard.html">
+<i class="fa-solid fa-table-columns"></i>
+Dashboard
+</a>
+
+<a href="patients.html">
+<i class="fa-solid fa-user-group"></i>
+Patients
+</a>
+
+<a href="appointments.html">
+<i class="fa-solid fa-calendar-days"></i>
+Appointments
+</a>
+
+<a href="analytics.html">
+<i class="fa-solid fa-chart-line"></i>
+Analytics
+</a>
+
+<a href="reports.html">
+<i class="fa-solid fa-file-lines"></i>
+Reports
+</a>
+
+<a class="active" href="settings.html">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+</nav>
+
+</aside>
+
+<!-- Main -->
+
+<main class="main">
+
+<header class="topbar">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+placeholder="Search Settings">
+
+</div>
+
+<div class="top-right">
+
+<div class="circle-btn">
+
+<i class="fa-regular fa-bell"></i>
+
+</div>
+
+<div class="profile">
+
+<img src="https://i.pravatar.cc/100?img=12">
+
+<div>
+
+<h4>Dr. Smith</h4>
+
+<p>Chief Physician</p>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<span class="status">
+
+<span class="green-dot"></span>
+
+System Preferences
+
+</span>
+
+<h1>Settings</h1>
+
+<p>
+
+Manage hospital preferences, notifications,
+security and account information.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Profile -->
+
+<section class="chart-card">
+
+<div class="card-header">
+
+<div>
+
+<h3>Profile Information</h3>
+
+<p>Administrator details</p>
+
+</div>
+
+</div>
+
+<form class="appointment-form">
+
+<input type="text" placeholder="Full Name" value="Dr. John Smith">
+
+<input type="email" placeholder="Email" value="johnsmith@hospital.com">
+
+<input type="text" placeholder="Hospital Name" value="CareScope Hospital">
+
+<input type="text" placeholder="Phone Number" value="+91 9876543210">
+
+<button>
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Changes
+
+</button>
+
+</form>
+
+</section>
+
+<!-- Preferences -->
+
+<section class="cards">
+
+<div class="card">
+
+<div class="icon blue">
+
+<i class="fa-solid fa-user-shield"></i>
+
+</div>
+
+<h2>Security</h2>
+
+<p>Manage Password & Access</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon green">
+
+<i class="fa-solid fa-bell"></i>
+
+</div>
+
+<h2>Notifications</h2>
+
+<p>Email & Push Alerts</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon orange">
+
+<i class="fa-solid fa-palette"></i>
+
+</div>
+
+<h2>Appearance</h2>
+
+<p>Theme & Colors</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon red">
+
+<i class="fa-solid fa-database"></i>
+
+</div>
+
+<h2>Backup</h2>
+
+<p>Cloud & Database</p>
+
+</div>
+
+</section>
+
+<!-- ================= SECURITY SETTINGS ================= -->
+
+<section class="analytics-grid">
+
+    <div class="chart-card">
+
+        <div class="card-header">
+            <div>
+                <h3>Security Settings</h3>
+                <p>Protect your account</p>
+            </div>
+        </div>
+
+        <form class="appointment-form">
+
+            <input type="password" placeholder="Current Password">
+
+            <input type="password" placeholder="New Password">
+
+            <input type="password" placeholder="Confirm Password">
+
+            <button>
+
+                <i class="fa-solid fa-lock"></i>
+
+                Update Password
+
+            </button>
+
+        </form>
+
+    </div>
+
+<!-- ================= NOTIFICATIONS ================= -->
+
+<div class="chart-card">
+
+<div class="card-header">
+
+<div>
+
+<h3>Notification Preferences</h3>
+
+<p>Choose your alerts</p>
+
+</div>
+
+</div>
+
+<div class="settings-list">
+
+<div class="setting-item">
+
+<div>
+
+<h4>Email Notifications</h4>
+
+<p>Receive updates via email</p>
+
+</div>
+
+<label class="switch">
+<input type="checkbox" checked>
+<span class="slider"></span>
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h4>SMS Alerts</h4>
+
+<p>Critical patient notifications</p>
+
+</div>
+
+<label class="switch">
+<input type="checkbox" checked>
+<span class="slider"></span>
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h4>Push Notifications</h4>
+
+<p>Browser notifications</p>
+
+</div>
+
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h4>Appointment Reminder</h4>
+
+<p>Notify before appointments</p>
+
+</div>
+
+<label class="switch">
+<input type="checkbox" checked>
+<span class="slider"></span>
+</label>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= APPEARANCE ================= -->
+
+<section class="chart-card">
+
+<div class="card-header">
+
+<div>
+
+<h3>Appearance</h3>
+
+<p>Customize dashboard</p>
+
+</div>
+
+</div>
+
+<div class="settings-list">
+
+<div class="setting-item">
+
+<div>
+
+<h4>Dark Mode</h4>
+
+<p>Enable dark dashboard theme</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h4>Compact Layout</h4>
+
+<p>Reduce spacing across dashboard</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h4>Animations</h4>
+
+<p>Enable smooth transitions</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= BACKUP ================= -->
+
+<section class="chart-card">
+
+<div class="card-header">
+
+<div>
+
+<h3>Backup & Restore</h3>
+
+<p>Protect hospital data</p>
+
+</div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon blue">
+
+<i class="fa-solid fa-cloud-arrow-up"></i>
+
+</div>
+
+<h2>Cloud Backup</h2>
+
+<p>Last Backup: Today 08:15 AM</p>
+
+<button class="table-btn">
+
+Backup Now
+
+</button>
+
+</div>
+
+<div class="card">
+
+<div class="icon green">
+
+<i class="fa-solid fa-cloud-arrow-down"></i>
+
+</div>
+
+<h2>Restore Data</h2>
+
+<p>Restore latest database</p>
+
+<button class="table-btn">
+
+Restore
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SYSTEM ACTIVITY ================= -->
+
+<section class="chart-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h3>Recent System Activity</h3>
+
+            <p>Latest administrator actions</p>
+
+        </div>
+
+    </div>
+
+    <div class="activity-list">
+
+        <div class="activity-item">
+
+            <div class="activity-dot green"></div>
+
+            <div>
+
+                <h4>Profile Updated</h4>
+
+                <p>Administrator profile information saved successfully.</p>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <div class="activity-dot blue"></div>
+
+            <div>
+
+                <h4>Cloud Backup Completed</h4>
+
+                <p>Database backup finished successfully.</p>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <div class="activity-dot orange"></div>
+
+            <div>
+
+                <h4>Password Changed</h4>
+
+                <p>Your account password was updated securely.</p>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <div class="activity-dot red"></div>
+
+            <div>
+
+                <h4>New Login Detected</h4>
+
+                <p>Secure login from Delhi, India.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= SYSTEM INFO ================= -->
+
+<section class="analytics-grid">
+
+    <div class="chart-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>System Information</h3>
+
+                <p>Application Details</p>
+
+            </div>
+
+        </div>
+
+        <table class="patient-table">
+
+            <tbody>
+
+                <tr>
+                    <td>Application</td>
+                    <td>CareScope Analytics</td>
+                </tr>
+
+                <tr>
+                    <td>Version</td>
+                    <td>v2.0.1</td>
+                </tr>
+
+                <tr>
+                    <td>Database</td>
+                    <td>MySQL Cloud</td>
+                </tr>
+
+                <tr>
+                    <td>Server Status</td>
+                    <td><span class="badge green">Online</span></td>
+                </tr>
+
+                <tr>
+                    <td>Storage Used</td>
+                    <td>128 GB / 500 GB</td>
+                </tr>
+
+                <tr>
+                    <td>Last Backup</td>
+                    <td>Today • 08:15 AM</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="chart-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>Quick Actions</h3>
+
+                <p>Administrative Tools</p>
+
+            </div>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon blue">
+
+                    <i class="fa-solid fa-users-gear"></i>
+
+                </div>
+
+                <h3>Manage Users</h3>
+
+                <button class="table-btn">
+                    Open
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon green">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <h3>Security Logs</h3>
+
+                <button class="table-btn">
+                    View
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon orange">
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                </div>
+
+                <h3>System Update</h3>
+
+                <button class="table-btn">
+                    Check
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 CareScope Analytics • Settings & Administration
+
+    </p>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
