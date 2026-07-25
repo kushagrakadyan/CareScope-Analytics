@@ -1,3 +1,7 @@
+
+
+
+
 # 🩺 Health Shield AI
 
 Health Shield AI is a modern healthcare dashboard designed to help users monitor their health data, appointments, medical reports, and analytics through a clean and interactive interface. The project focuses on providing an intuitive user experience with responsive design and dynamic visualizations.
