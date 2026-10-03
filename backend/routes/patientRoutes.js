@@ -77,7 +77,7 @@ router.get(
 router.post(
     "/",
     protect,
-    adminOrReceptionist,
+    adminDoctorOrReceptionist,
     addPatient
 );
 

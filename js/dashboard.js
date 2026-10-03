@@ -1,5 +1,8 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
+    // Run only on the dashboard page (never overwrite other pages' buttons/tables)
+    if (!document.getElementById("patientChart")) return;
+
     const setText = (el, value) => {
         if (el) el.textContent = value;
     };

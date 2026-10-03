@@ -122,12 +122,21 @@ const createAppointment = async (req, res) => {
 
         console.error(error);
 
+        if (error.name === "ValidationError") {
+            return res.status(400).json({ success: false, message: Object.values(error.errors).map(e => e.message).join(", ") });
+        }
+        if (error.name === "CastError") {
+            return res.status(400).json({ success: false, message: "Invalid " + error.path + " selected." });
+        }
+        if (error.code === 11000) {
+            return res.status(409).json({ success: false, message: "Appointment ID already exists." });
+        }
+
         return res.status(500).json({
 
             success: false,
 
-            message:
-                "Internal Server Error"
+            message: process.env.NODE_ENV === "production" ? "Internal Server Error" : "Server error: " + error.message
 
         });
 

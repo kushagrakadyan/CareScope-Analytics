@@ -58,6 +58,10 @@ const addPatient = async (req, res) => {
 
         } = req.body;
 
+        // Blank optional strings -> undefined (blank bloodGroup etc. would break enum validation)
+        const clean = (v) => (typeof v === "string" ? v.trim() : v);
+        const opt = (v) => (clean(v) === "" || clean(v) === null ? undefined : clean(v));
+
         // ==========================================
         // Required Field Validation
         // ==========================================
@@ -66,7 +70,7 @@ const addPatient = async (req, res) => {
             !patientId ||
             !firstName ||
             !lastName ||
-            !age ||
+            age === undefined || age === null || age === "" ||
             !gender ||
             !phone ||
             !department ||
@@ -125,37 +129,37 @@ const addPatient = async (req, res) => {
 
                 gender,
 
-                dateOfBirth,
+                dateOfBirth: opt(dateOfBirth),
 
-                bloodGroup,
+                bloodGroup: opt(bloodGroup),
 
                 phone,
 
-                email,
+                email: opt(email),
 
-                address,
+                address: opt(address),
 
-                emergencyContactName,
+                emergencyContactName: opt(emergencyContactName),
 
-                emergencyContactNumber,
+                emergencyContactNumber: opt(emergencyContactNumber),
 
                 department,
 
                 assignedDoctor,
 
-                diagnosis,
+                diagnosis: opt(diagnosis),
 
                 allergies,
 
                 medications,
 
-                medicalHistory,
+                medicalHistory: opt(medicalHistory),
 
-                admissionDate,
+                admissionDate: opt(admissionDate),
 
-                dischargeDate,
+                dischargeDate: opt(dischargeDate),
 
-                status,
+                status: opt(status),
 
                 createdBy: req.user._id
 
@@ -178,12 +182,18 @@ const addPatient = async (req, res) => {
 
         console.error(error);
 
+        if (error.name === "ValidationError") {
+            return res.status(400).json({ success: false, message: Object.values(error.errors).map(e => e.message).join(", ") });
+        }
+        if (error.code === 11000) {
+            return res.status(409).json({ success: false, message: "Patient ID already exists." });
+        }
+
         return res.status(500).json({
 
             success: false,
 
-            message:
-                "Internal Server Error"
+            message: process.env.NODE_ENV === "production" ? "Internal Server Error" : "Server error: " + error.message
 
         });
 

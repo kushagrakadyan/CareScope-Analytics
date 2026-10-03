@@ -203,7 +203,7 @@ router.put(
 router.put(
     "/:id/cancel",
     protect,
-    adminOrDoctor,
+    adminDoctorOrReceptionist,
     cancelAppointment
 );
 

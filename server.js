@@ -57,10 +57,17 @@ app.use("/api/reports", reportRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
 const frontendRoot = __dirname;
-app.use(express.static(frontendRoot, {
-    index: false,
-    extensions: ["html"]
-}));
+
+// Serve only public frontend files (never backend/, .env, package.json, etc.)
+["css", "js", "assets", "data"].forEach(dir => {
+    app.use(`/${dir}`, express.static(path.join(frontendRoot, dir)));
+});
+
+app.get(/^\/([\w-]+)\.html$/, (req, res, next) => {
+    const file = path.join(frontendRoot, `${req.params[0]}.html`);
+    if (!fs.existsSync(file)) return next();
+    res.sendFile(file);
+});
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(frontendRoot, "index.html"));
