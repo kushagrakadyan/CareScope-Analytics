@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Patient Details | CareScope Analytics</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Existing Dashboard CSS -->
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+    <!-- Patient Details CSS -->
+    <link
+        rel="stylesheet"
+        href="css/patient-details.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="dashboard">
+
+
+    <!-- ==================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+
+            <div>
+
+                <h2>CareScope</h2>
+
+                <p>Analytics</p>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-table-columns"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                class="active"
+                href="patients.html"
+            >
+
+                <i class="fa-solid fa-user-group"></i>
+
+                Patients
+
+            </a>
+
+
+            <a href="appointments.html">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                Appointments
+
+            </a>
+
+
+            <a href="analytics.html">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Analytics
+
+            </a>
+
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Reports
+
+            </a>
+
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Settings
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    placeholder="Search Patient"
+                    id="topSearch"
+                >
+
+            </div>
+
+
+            <div class="top-right"><button data-logout class="circle-btn" title="Logout" style="border:0;cursor:pointer"><i class="fa-solid fa-right-from-bracket"></i></button>
+
+                <div class="circle-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </div>
+
+
+                <div class="profile">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=12"
+                        alt="Profile"
+                    >
+
+                    <div>
+
+                        <h4 id="profileName">
+                            Dr. Smith
+                        </h4>
+
+                        <p>
+                            Chief Physician
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ==================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <div class="patient-details-page">
+
+
+            <!-- BACK + ACTIONS -->
+
+            <div class="details-toolbar">
+
+                <a
+                    href="patients.html"
+                    class="back-button"
+                >
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to Patients
+
+                </a>
+
+
+                <div class="details-actions">
+
+                    <button
+                        id="editPatientBtn"
+                        class="action-btn secondary"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-pen"></i>
+
+                        Edit Patient
+
+                    </button>
+
+
+                    <button
+                        id="dischargePatientBtn"
+                        class="action-btn danger"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Discharge
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 PATIENT HERO
+            ================================================== -->
+
+            <section class="patient-profile-card">
+
+
+                <div class="patient-avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div class="patient-profile-info">
+
+                    <div class="patient-title-row">
+
+                        <div>
+
+                            <span class="small-label">
+                                PATIENT PROFILE
+                            </span>
+
+                            <h1 id="patientName">
+                                Loading...
+                            </h1>
+
+                            <p id="patientId">
+                                Patient ID: --
+                            </p>
+
+                        </div>
+
+
+                        <span
+                            id="patientStatus"
+                            class="patient-status"
+                        >
+                            Loading
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-meta">
+
+                        <span>
+
+                            <i class="fa-solid fa-hospital"></i>
+
+                            <span id="patientDepartment">
+                                --
+                            </span>
+
+                        </span>
+
+
+                        <span>
+
+                            <i class="fa-solid fa-user-doctor"></i>
+
+                            <span id="patientDoctor">
+                                --
+                            </span>
+
+                        </span>
+
+
+                        <span>
+
+                            <i class="fa-solid fa-calendar"></i>
+
+                            <span id="patientAdmission">
+                                --
+                            </span>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 LOADING
+            ================================================== -->
+
+            <div
+                id="detailsLoading"
+                class="details-loading"
+            >
+
+                <div class="loading-spinner"></div>
+
+                <p>
+                    Loading patient information...
+                </p>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 ERROR
+            ================================================== -->
+
+            <div
+                id="detailsError"
+                class="details-error"
+                style="display:none;"
+            >
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                <h3>
+                    Unable to load patient
+                </h3>
+
+                <p id="errorMessage">
+                    Something went wrong.
+                </p>
+
+                <button
+                    type="button"
+                    onclick="window.location.href='patients.html'"
+                >
+
+                    Back to Patients
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 DETAILS CONTENT
+            ================================================== -->
+
+            <div
+                id="patientDetailsContent"
+                class="details-content"
+                style="display:none;"
+            >
+
+
+                <!-- ==============================================
+                     BASIC INFORMATION
+                =============================================== -->
+
+                <section class="details-card">
+
+                    <div class="details-card-header">
+
+                        <div>
+
+                            <span class="section-icon blue">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Personal Information
+                                </h2>
+
+                                <p>
+                                    Basic patient information
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="details-grid">
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Patient ID
+                            </span>
+
+                            <strong id="detailPatientId">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Full Name
+                            </span>
+
+                            <strong id="detailFullName">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Age
+                            </span>
+
+                            <strong id="detailAge">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Gender
+                            </span>
+
+                            <strong id="detailGender">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Date of Birth
+                            </span>
+
+                            <strong id="detailDob">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Blood Group
+                            </span>
+
+                            <strong id="detailBloodGroup">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==============================================
+                     CONTACT INFORMATION
+                =============================================== -->
+
+                <section class="details-card">
+
+                    <div class="details-card-header">
+
+                        <div>
+
+                            <span class="section-icon green">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Contact Information
+                                </h2>
+
+                                <p>
+                                    Patient contact details
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="details-grid">
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Phone
+                            </span>
+
+                            <strong id="detailPhone">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Email
+                            </span>
+
+                            <strong id="detailEmail">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item wide">
+
+                            <span>
+                                Address
+                            </span>
+
+                            <strong id="detailAddress">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==============================================
+                     MEDICAL INFORMATION
+                =============================================== -->
+
+                <section class="details-card">
+
+                    <div class="details-card-header">
+
+                        <div>
+
+                            <span class="section-icon red">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Medical Information
+                                </h2>
+
+                                <p>
+                                    Current medical condition
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="medical-info-grid">
+
+
+                        <div class="medical-box diagnosis">
+
+                            <div class="medical-box-title">
+
+                                <i class="fa-solid fa-stethoscope"></i>
+
+                                Diagnosis
+
+                            </div>
+
+                            <p id="detailDiagnosis">
+                                No diagnosis recorded.
+                            </p>
+
+                        </div>
+
+
+                        <div class="medical-box">
+
+                            <div class="medical-box-title">
+
+                                <i class="fa-solid fa-pills"></i>
+
+                                Medications
+
+                            </div>
+
+                            <p id="detailMedications">
+                                No medications recorded.
+                            </p>
+
+                        </div>
+
+
+                        <div class="medical-box">
+
+                            <div class="medical-box-title">
+
+                                <i class="fa-solid fa-allergies"></i>
+
+                                Allergies
+
+                            </div>
+
+                            <p id="detailAllergies">
+                                No allergies recorded.
+                            </p>
+
+                        </div>
+
+
+                        <div class="medical-box">
+
+                            <div class="medical-box-title">
+
+                                <i class="fa-solid fa-notes-medical"></i>
+
+                                Medical History
+
+                            </div>
+
+                            <p id="detailHistory">
+                                No medical history recorded.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==============================================
+                     HOSPITAL INFORMATION
+                =============================================== -->
+
+                <section class="details-card">
+
+                    <div class="details-card-header">
+
+                        <div>
+
+                            <span class="section-icon purple">
+                                <i class="fa-solid fa-hospital-user"></i>
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Hospital Information
+                                </h2>
+
+                                <p>
+                                    Admission and treatment details
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="details-grid">
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Department
+                            </span>
+
+                            <strong id="detailDepartment">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Assigned Doctor
+                            </span>
+
+                            <strong id="detailDoctor">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Admission Date
+                            </span>
+
+                            <strong id="detailAdmissionDate">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Discharge Date
+                            </span>
+
+                            <strong id="detailDischargeDate">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==============================================
+                     EMERGENCY CONTACT
+                =============================================== -->
+
+                <section class="details-card">
+
+                    <div class="details-card-header">
+
+                        <div>
+
+                            <span class="section-icon orange">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Emergency Contact
+                                </h2>
+
+                                <p>
+                                    Emergency contact information
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="details-grid">
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Contact Name
+                            </span>
+
+                            <strong id="detailEmergencyName">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Relationship
+                            </span>
+
+                            <strong id="detailEmergencyRelation">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>
+                                Contact Phone
+                            </span>
+
+                            <strong id="detailEmergencyPhone">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==============================================
+                     REPORTS
+                =============================================== -->
+
+                <section class="details-card">
+
+                    <div class="details-card-header">
+
+                        <div>
+
+                            <span class="section-icon blue">
+                                <i class="fa-solid fa-file-medical"></i>
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Medical Reports
+                                </h2>
+
+                                <p>
+                                    Patient reports and documents
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="reportsContainer"
+                        class="reports-container"
+                    >
+
+                        <div class="empty-state">
+
+                            <i class="fa-solid fa-file-circle-check"></i>
+
+                            <p>
+                                No medical reports available.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==============================================
+                     FOOTER ACTIONS
+                =============================================== -->
+
+                <div class="bottom-actions">
+
+                    <a
+                        href="patients.html"
+                        class="action-btn secondary"
+                    >
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Back to Patients
+
+                    </a>
+
+
+                    <button
+                        id="editPatientBtnBottom"
+                        class="action-btn primary"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-pen"></i>
+
+                        Edit Patient
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <p>
+                © 2026 CareScope Analytics •
+                Patient Management System
+            </p>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+<!-- ======================================================
+     SCRIPTS
+====================================================== -->
+
+<script src="js/ui.js"></script>
+<script src="js/auth.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/patient-details.js"></script>
+
+
+</body>
+
+</html>

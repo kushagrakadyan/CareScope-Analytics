@@ -1,0 +1,15 @@
+[
+  {
+    "patientId": "PAT1001",
+    "firstName": "Rahul",
+    "lastName": "Sharma",
+    "age": 25,
+    "gender": "Male",
+    "bloodGroup": "O+",
+    "phone": "9876543210",
+    "department": "Cardiology",
+    "assignedDoctor": "Dr. Emma Watson",
+    "diagnosis": "Chest Pain",
+    "status": "Recovering"
+  }
+]
